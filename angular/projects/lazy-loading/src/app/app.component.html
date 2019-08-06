@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  
+  <button routerLink="/">Home</button>
+  <button routerLink="/customers">Customers</button>
+  <button routerLink="/orders">Orders</button>
+ 
+<router-outlet></router-outlet>
+
+<h4>Users:</h4>  
+  <p *ngFor="let user of users">
+    <span> id: {{user.id}}</span><br>
+    <span> name: {{user.name}}</span><br>
+    <span> email: {{user.email}}</span>
+</p> 
