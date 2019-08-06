@@ -1,0 +1,15 @@
+<p>order-list works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="text" formControlName="name" (click)="setValue()">
+        <input type="text" formControlName="address" (click)="patchValue();reset();">
+        <select formControlName="oppoSuits" >
+
+                <option>Choose</option>
+                <option *ngFor="let suit of suits" [ngValue]= "suit">{{suit}}</option>
+              </select>
+       </div>
+       <button type="submit"> Submit</button>
+</form>
+
+{{formGroup.value.name}}{{formGroup.value.address}}{{formGroup.value.oppoSuits}}
