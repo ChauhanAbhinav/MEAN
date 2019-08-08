@@ -26,7 +26,7 @@ export class ProductDetailsComponent implements OnInit {
         this.outlet = this.route.snapshot.outlet;
         console.log(this.product);
     }
-    addToCart(product){
+    addToCart(product) {
         this.cart.addToCart(product);
         alert('Product added to cart');
     }

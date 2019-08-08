@@ -4,12 +4,12 @@
   <!-- index copied in productId -->
  
   <h3>
-    <a [title]="product.name + ' details'" [routerLink]="['', { outlets: { primary : ['products', productId ] } }]">
+    <a [title]="product.name + ' details'" [routerLink]="['products', productId] ">
       {{ product.name }}
     </a>
   </h3>
  
-  <p *ngIf="product.description">
+  <p appStyle *ngIf="product.description">
     Description: {{ product.description }}
   </p>
 
@@ -21,4 +21,3 @@
   </app-product-alerts>
 
 </div>
-outlet name:{{outlet}}

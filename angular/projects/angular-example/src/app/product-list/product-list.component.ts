@@ -11,10 +11,8 @@ import { ProductAlertsComponent } from '../product-alerts/product-alerts.compone
 export class ProductListComponent implements OnInit, AfterViewInit {
   constructor() {
     console.log('this is list constructor');
-    this.a = 22;
   }
   products = products;
-  private a ;
   // The constructor should only be used to initialize class members but shouldn't do actual "work"
 
 

@@ -15,23 +15,23 @@ export class AuthGuardsService  implements CanActivate, CanActivateChild, CanDea
   constructor() { }
 
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (state.url === 'customers') {
-       alert('Guard activated : route allowed');
+    if (state.url === '/customers') {
+       alert('Guard activated : route allowed: ' + state.url);
        return true;
     } else {
-      alert('Guard activated : route not allowed');
+      alert('Guard activated : route not allowed:' + state.url);
       return false;
     }
   }
 
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      console.log('yes');
+      console.log('yes'); alert();
       // return this.canActivate(route, state);
-      return true;
+      return false;
     }
 
     canDeactivate(component: CustomerListComponent) {
-      if(component.hasSubmitted()){
+      if(component.hasSubmitted()) {
         console.log('inside deactivate, Allowed');
         return true;
       }

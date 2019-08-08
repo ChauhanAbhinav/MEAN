@@ -8,9 +8,9 @@ const routes: Routes = [
     path: 'customers',
     component: CustomerListComponent,
     // loadChildren: () => import('./customers/customers.module').then(mod => mod.CustomersModule),
-    // canActivate: [AuthGuardsService],
-    // canActivateChild: [AuthGuardsService],
-    // canDeactivate: [AuthGuardsService],
+    canActivate: [AuthGuardsService],
+    canActivateChild: [AuthGuardsService],
+    canDeactivate: [AuthGuardsService],
   },
   {
     path: 'orders',
