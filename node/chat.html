@@ -22,29 +22,29 @@
     <script src="./socket.io/socket.io.js"></script> 
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script> 
-    // var socket = io();
+    var socket = io();
      let username = Math.round(Math.random()*100000);
 
-    //  $('form').submit(function(e){
-    //   e.preventDefault();
-    //   let msg = $('#m').val();
-    //   let chatMessage = {
-    //     from: username,
-    //     text: msg,
-    //   }
-    //   socket.emit('chat message', chatMessage);
-    //   // console.log(msg);
-    //   $('#m').val('');
-    //  })
+     $('form').submit(function(e){
+      e.preventDefault();
+      let msg = $('#m').val();
+      let chatMessage = {
+        from: username,
+        text: msg,
+      }
+      socket.emit('chat message', chatMessage);
+      // console.log(msg);
+      $('#m').val('');
+     })
 
-    //  socket.on('server',function(msg){
-    //   //  console.log("Server: "+msg);
-    //    $('#messages').append('<li>'+msg+'</li>');
-    //  });
+     socket.on('server',function(msg){
+      //  console.log("Server: "+msg);
+       $('#messages').append('<li>'+msg+'</li>');
+     });
 
-    //  socket.on('chat update', (chatMessage)=>{
-    //   $('#messages').append('<li>'+chatMessage.from+': <span><b>'+chatMessage.text+'</b></span></li>');
-    //  });
+     socket.on('chat update', (chatMessage)=>{
+      $('#messages').append('<li>'+chatMessage.from+': <span><b>'+chatMessage.text+'</b></span></li>');
+     });
      
      </script>
   </body>
